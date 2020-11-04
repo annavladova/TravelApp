@@ -5,7 +5,6 @@ import MapKit
 
 class MapViewController: UIViewController {
     
-    //    передаем геолокацию замыканием и он требует инициализации, поэтому мы сделали значение опциональным
     var closure: ((CGPoint) -> Void)?
     
     @IBOutlet weak var mapView: MKMapView!
@@ -14,7 +13,6 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         let longTapGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap(sender:)))
         mapView.addGestureRecognizer(longTapGesture)
-        //        добавили лонгтаб к рекогнайзеру
     }
     
     @objc func longTap(sender: UIGestureRecognizer) {
@@ -28,8 +26,6 @@ class MapViewController: UIViewController {
             let point = CGPoint(x: locationOnMap.latitude.rounded(2), y: locationOnMap.longitude.rounded(2))
             
             closure?(point)
-            
-//        селектор в рекогнайзере это функция: названия по которым компилятор ищет какой код надо вызывать
         }
     }
 }
