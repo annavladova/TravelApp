@@ -1,10 +1,3 @@
-//
-//  RegistrationViewController.swift
-//  Lesson9
-//
-//  Created by macbook on 10/14/20.
-//  Copyright © 2020 macbook. All rights reserved.
-//
 
 import UIKit
 import Firebase
