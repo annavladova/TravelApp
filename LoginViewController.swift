@@ -1,10 +1,3 @@
-//
-//  LoginViewController.swift
-//  Lesson9
-//
-//  Created by macbook on 8/24/20.
-//  Copyright © 2020 macbook. All rights reserved.
-//
 
 import UIKit
 import Firebase
@@ -25,8 +18,6 @@ class LoginViewController: UIViewController {
     
 //    MARK: - LIFECIRCLE
     
-//    !!!!!!!!! системная функция вьюдидлоад/ ее надо вызвать у вью контроллера (у родителя) только через супер/вьюдидлоад
-    
         override func viewDidLoad() {
             super.viewDidLoad()
             print("viewDidLoad LoginViewController")
@@ -34,13 +25,6 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
             navigationItem.hidesBackButton = true
         }
-
-    
-    deinit {
-        print("deinit")
-    }
-    
-//    вьюдидлоад срабатывает когда экран был загружен/ верстки еще нет. это значит что во вьюдидлоаде размеры всего такие какие они у нас установлены в сториборде (например под айфон 8)
     
 // MARK: - FUNCTION
     
@@ -51,8 +35,6 @@ class LoginViewController: UIViewController {
 //    MARK: - PROPERTIES
         
     var eyeButton = true
-    
-    
     
 // MARK: - ACTIONS
     
@@ -93,7 +75,5 @@ class LoginViewController: UIViewController {
             passwordTextField.isSecureTextEntry = true
         }
         eyeButton = !eyeButton
-    }
-
-    
+    } 
 }
