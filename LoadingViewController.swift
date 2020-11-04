@@ -1,10 +1,3 @@
-//
-//  LoadingViewController.swift
-//  Lesson9
-//
-//  Created by macbook on 10/22/20.
-//  Copyright © 2020 macbook. All rights reserved.
-//
 
 import UIKit
 import FirebaseRemoteConfig
