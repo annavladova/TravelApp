@@ -88,7 +88,7 @@ class CreateStopViewController: UIViewController {
         loadingView.startAnimation()
         
         child.setValue(stop.json) { (error, ref) in
-            print(error, ref) // в консоли по этой ссылке будет nil если ошибок нет
+            print(error, ref) 
             self.loadingView.stopAnimation()
             self.navigationController?.popViewController(animated: true)
         }
@@ -107,7 +107,7 @@ class CreateStopViewController: UIViewController {
                                travelId: travelId,
                                name: stopNameTextField.text ?? "",
                                rating: Int(ratingLable.text ?? "") ?? 0,
-                               location: .zero, //исправить с нуля !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                               location: .zero, 
                                description: textView.text,
                                spendMoney: money,
                                currency: curencySelected)
@@ -128,7 +128,7 @@ class CreateStopViewController: UIViewController {
         stop.travelId = travelId
         stop.name = stopNameTextField.text ?? ""
         stop.rating = Int(ratingLable.text ?? "") ?? 0
-        stop.location = .zero //исправить с нуля !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        stop.location = .zero 
         stop.description = textView.text
         stop.spendMoney = money
         stop.currency = curencySelected
