@@ -5,14 +5,10 @@ import FirebaseDatabase
 import SwipeCellKit
 import RealmSwift
 
-
-//мы тут добавили протоколы, они дают нам 2 системных метода
-
 class TravelListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, SwipeTableViewCellDelegate {
     
     
     // MARK: - OUTLETS
-    //создаем аутлет таблицы
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadingView: DotsActivityIndicator!
     @IBOutlet weak var noAnyTravel: UILabel!
@@ -48,10 +44,6 @@ class TravelListViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 95
     }
-    
-    // функции надо вернуть сколько элементов надо отображать на экране из таблицы, таблица просит всегда эти 2 обязательные штуки, сколько и какие
-    
-    // ЭТА ФУНКЦИЯ ВЫЗЫВАЕТСЯ СИСТЕМОЙ КАЖДЫЙ РАЗ КОГДА У НАС ХОЧЕТ ПОЯВИТЬСЯ ЯЧЕЙКА мы скролим должна появится новая ячейка снизу и вызывается этот метод чтобы мы заполнили ее новыми данными. то есть система нам отдает ячейку, у нее есть параметры(таблица и индекс пасс(структура с роу и секшн) секшн всегда 0, а роу - это индекс текущего элемента. если ячейка нулевая.
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath) as! TravelCell
@@ -111,7 +103,7 @@ class TravelListViewController: UIViewController, UITableViewDelegate, UITableVi
         let deleteAction = SwipeAction(style: .destructive, title: "Удалить") { action, indexPath in
             let travel = self.travels[indexPath.row]
             self.travels.remove(at: indexPath.row)
-            self.emptyList() //++++++++++++++++++++++++++++++++++++++++
+            self.emptyList() 
             self.tableView.reloadData()
             
             let database = Database.database().reference()
@@ -192,14 +184,7 @@ class TravelListViewController: UIViewController, UITableViewDelegate, UITableVi
         self.present(alertController, animated: true, completion: nil)
     }
     
-    
-    
-    //!!!!!!!!!!!!! таблицы и коллекшн вью не работают если не указать им делегат и датасорс!!!!!!!!!!!!!!!!!!!!!!!! выше отметила восклицательными знаками
-    
     // MARK: - FUNCTIONS
-    
-    //    функция отправки на сервер фаербэйз наши трэвелы
-    //    в папку тревел на фаербейзе пытаемся сохранить ребенка со своим айдишником который мы сами и создали
     
     func sendToServer(travel: Travel) {
         let database = Database.database().reference()
@@ -283,11 +268,7 @@ class TravelListViewController: UIViewController, UITableViewDelegate, UITableVi
         } else {
             noAnyTravel.isHidden = true
         }
-    }
-    
-    
-    
-    
+    } 
 }
 
 
