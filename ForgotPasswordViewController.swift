@@ -1,10 +1,3 @@
-//
-//  ForgotPasswordViewController.swift
-//  Lesson9
-//
-//  Created by macbook on 8/26/20.
-//  Copyright © 2020 macbook. All rights reserved.
-//
 
 import UIKit
 
@@ -28,6 +21,5 @@ class ForgotPasswordViewController: UIViewController {
         button.layer.cornerRadius = radius
     }
     
-//    MARK: - ACTIONS
     
 }
