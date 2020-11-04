@@ -15,7 +15,7 @@ class StopListViewController: UIViewController, UITableViewDelegate, UITableView
     var textNameTransfer: String = ""
     
     
-    //MARK: - Liftraveecycle
+    //MARK: - Liftravelcycle
     override func viewDidLoad() {
         super.viewDidLoad()
         stopTableView.delegate = self
@@ -111,8 +111,6 @@ class StopListViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.pushViewController(createVC, animated: true)
     }
     
-    
-    
 //MARK: - ACTIONS
     
     @IBAction func plusButton(_ sender: UIButton) {
@@ -134,7 +132,5 @@ class StopListViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             noAnyStops.isHidden = true
         }
-    }
-    
-    
+    } 
 }
