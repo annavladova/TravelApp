@@ -22,6 +22,7 @@ class CreateStopViewController: UIViewController {
     @IBOutlet weak var loadingView: DotsActivityIndicator!
     
  // MARK: - PROPERTIES
+    
     var travelId: String = ""
     var textToTransfer: String = ""
     var money: Double = 0
@@ -34,7 +35,6 @@ class CreateStopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.hideKeyboardWhenTappedAround()
         
 //        толщина бордера
@@ -43,6 +43,7 @@ class CreateStopViewController: UIViewController {
         
         let customColor = CGColor.init(srgbRed: 0.515, green: 0.528, blue: 0.937, alpha: 1)
         loadingView.tintColor = UIColor(cgColor: customColor)
+        
 //        цвет бордера
         stepperRating.layer.borderColor = customColor
         chooseTransportButton.layer.borderColor = customColor
@@ -54,14 +55,12 @@ class CreateStopViewController: UIViewController {
         stepperRating.tintColor = UIColor(cgColor: customColor)
         stepperRating.setDecrementImage(stepperRating.decrementImage(for: .normal), for: .normal)
         stepperRating.setIncrementImage(stepperRating.incrementImage(for: .normal), for: .normal)
-        
+    
         stopNameTextField.text = String(stop?.name ?? "")
         ratingLable.text = String(stop?.rating ?? 0)
-//        locationLable.text = String(stop?.location)
         textView.text = stop?.description
         spentMoneyLable.text = String(stop?.spendMoney ?? 0)
-//        chooseTransportButton = stop?.transport.
-        
+
         textView.textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
@@ -144,12 +143,10 @@ class CreateStopViewController: UIViewController {
     
     
     @IBAction func plusLocationClicked(_ sender: Any) {
-//        мы вынесли расширение для создания новых вьюконтроллеров в отдельный файл и теперь можно открывать их в пару строчек
+
         let mapVC = MapViewController.fromStoryboard() as! MapViewController
         navigationController?.pushViewController(mapVC, animated: true)
-        
-        //        вызываем замыкание из другого экрана
-        //        self указываем изза темы с утечкой памяти, с этим потом будем разбираться
+
         mapVC.closure = { point in
             self.locationLable.text = "\(point.x) - \(point.y)"
         }
